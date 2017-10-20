@@ -1,4 +1,5 @@
 @import 'media';
+@import (css) '../../node_modules/normalize.css';
 
 @red: #cc0000;
 @gray: #d9d9d4;
@@ -70,19 +71,18 @@ a{
     overflow: hidden;
     position: relative;
     .font-family();
-    .phone{
-        display: inline-block;
-        position: absolute;
-        top: 32px;
-        right: 5.25%;
-        font-weight: bold;
-
-        &__number{
-            font-size: 1.5em;
-            color:@red;
-        }
-    }
 }
+.phone{
+    display: inline-block;
+    position: absolute;
+    top: 32px;
+    right: 5.25%;
+    font-weight: bold;
+    &__number{
+        font-size: 1.5em;
+        color:@red;
+     }
+ }
 .logo-oggetto {
     display: inline-block;
     position: absolute;
@@ -119,10 +119,9 @@ a{
     background-color: @white-gray;
     border-top: 1px solid @gray;
     border-bottom: 1px solid @gray;
-    position: relative;
 }
 .navigation{
-    position: absolute;
+    position: relative;
     left: 6.55%;
     display: inline-block;
 
@@ -176,7 +175,6 @@ a{
 
 .content{
     //background-color: #fff;
-
 }
 
 .breadcrumbs{
@@ -206,7 +204,8 @@ a{
     &_wrap{
     float: left;
     width: 43.7%;
-    padding-left: 6.4%;}
+    padding-left: 6.4%;
+    }
     &__img{
         width: 100%;
     }
