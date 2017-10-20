@@ -16,7 +16,7 @@
 
 // Код для примера
 body {
-    font: 1em 'Roboto', sans-serif;
+    margin: 0;
 }
 a{
     //color: @black;
@@ -71,16 +71,26 @@ a{
     overflow: hidden;
     position: relative;
     .font-family();
+    @media @phone-strict{
+        height: 140px;
+    }
 }
 .phone{
     display: inline-block;
     position: absolute;
     top: 32px;
     right: 5.25%;
-    font-weight: bold;
+    @media @phone-strict {
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 86%;
+        right: 0;
+        text-align: center;
+    }
     &__number{
         font-size: 1.5em;
         color:@red;
+        font-weight: bold;
      }
  }
 .logo-oggetto {
@@ -90,6 +100,10 @@ a{
     left: 50.4%;
     top: 50%;
     cursor: pointer;
+    @media @phone-strict {
+        left: 50%;
+        top: 51%;
+    }
     &__link{
         &_oggetto {
             width: 50px;
@@ -103,6 +117,11 @@ a{
     left: 6.45%;
     top: 35px;
     cursor: pointer;
+    @media @phone-strict {
+        transform: translate(-50%, -50%);
+        left: 50%;
+        top: 17%;
+    }
     &__link{
 
 
@@ -154,11 +173,16 @@ a{
     top: 5px;
     float: right;
     right: 5.25%;
-    //top: 40%;
-    //position: absolute;
     position: relative;
     height: 38px;
     width: 17.3%;
+    @media @phone-strict{
+        width: 70%;
+        top: 0;
+        float: left;
+        left: 6.4%;
+        right: 0;
+    }
     &__area{
         width: 100%;
         height: 38px;
@@ -396,7 +420,8 @@ a{
 }
 
 .social{
-    float: right;
+    float: left;
+    margin-left: 7%;
     &__list{
         list-style-type: none;
         padding-left: 0;
@@ -404,6 +429,10 @@ a{
     }
     &__item{
         margin-bottom: 10px;
+        @media @desktop-strict, @tablet-strict{
+            float: left;
+            margin: 10px;
+        }
     }
     &__icon{
         height: 40px;
