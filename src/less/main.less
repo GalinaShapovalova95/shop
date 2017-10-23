@@ -1,5 +1,5 @@
 @import 'media';
-@import (css) '../../node_modules/normalize.css';
+@import (less) '../../node_modules/normalize.css/normalize.css';
 
 @red: #cc0000;
 @gray: #d9d9d4;
@@ -226,9 +226,13 @@ a{
 
 .photo{
     &_wrap{
-    float: left;
-    width: 43.7%;
-    padding-left: 6.4%;
+        float: left;
+        width: 43.7%;
+        padding-left: 6.4%;
+        @media @tablet-strict,@phone-strict{
+            width: 80%;
+            padding: 0 10%;
+        }
     }
     &__img{
         width: 100%;
@@ -240,15 +244,25 @@ a{
     padding-left: 4.6%;
     overflow: hidden;
     .font-family();
+    @media @tablet-strict, @phone-strict{
+        width: 80%;
+        padding: 0 10%;
+    }
     &__title{
         margin: 0 0 6px;
         font-size: 2.250em;
         top: -8px;
         position: relative;
+        @media @tablet-strict,@phone-strict{
+            text-align: center;
+        }
     }
     &__text{
         margin: 0;
         font-size: 1em;
+        @media @tablet-strict,@phone-strict{
+            text-align: center;
+        }
     }
     &__price{
         font-size: 2.250em;
@@ -256,6 +270,15 @@ a{
         margin: 24px 0;
         font-weight: bold;
         display: inline-block;
+        @media @tablet-strict,@phone-strict{
+            text-align: center;
+            display: block;
+        }
+    }
+    &__wrap-button{
+        @media @tablet-strict,@phone-strict{
+            position: relative;
+        }
     }
     &__button{
         background-color: #cc0000;
@@ -264,6 +287,11 @@ a{
         border: none;
         color: @white;
         cursor: pointer;
+        @media @tablet-strict,@phone-strict{
+            position: absolute;
+            transform: translate(-50%,-50%);
+            left: 50%;
+        }
 
     }
     &__button:focus{
@@ -273,12 +301,19 @@ a{
 
 .props-product{
     margin-bottom: 35px;
+    @media @tablet-strict,@phone-strict{
+        text-align: center;
+    }
     &__title{
 
     }
     &__list{
         list-style-type: none;
         padding-left: 0;
+        @media @tablet-strict,@phone-strict{
+            display: inline-block;
+            text-align: center;
+        }
     }
     &__item{
         float: left;
@@ -320,6 +355,10 @@ a{
 .favourite{
     margin-top: 40px;
     cursor: pointer;
+    @media @tablet-strict,@phone-strict{
+        margin-top: 100px;
+        text-align: center;
+    }
     &__title{
         font-size: 1.125em;
         color: @dark-gray;
@@ -331,16 +370,27 @@ a{
     background-color: @white-gray;
     border-top: 1px solid @gray;
     padding: 58px 0 0 6.25%;
-    margin-top: 123px;
     overflow: hidden;
     .font-family();
     &_wrap{
-        padding: 3.7% 6.3%;
+        padding: 3.7% 6%;
+        margin-top: 123px;
+        @media @phone-strict{
+            padding: 2%;
+            margin-top: 30px;
+        }
     }
     &__service{
         float: left;
         margin-right: 3.5%;
         width: 27%;
+        @media @desktop-strict, @tablet-strict{
+            width: 43.5%;
+        }
+        @media @phone-strict{
+            width: 100%;
+            margin: 0 0 10px;
+        }
     }
     &__title{
         font-weight: bold;
@@ -351,7 +401,10 @@ a{
         padding-left: 0;
         margin: 0;
         column-count: 2;
-        height: 200px;
+        //min-height: 200px;
+        @media @desktop-strict{
+            height: auto;
+        }
     }
     &__item{
         line-height: 148%;
@@ -368,6 +421,15 @@ a{
     &__law{
         margin: 0 0 45px 0;
     }
+    &__bottom{
+        margin-top: 80px;
+        @media @desktop-strict, @tablet-strict{
+            margin-top: 0;
+        }
+        @media @phone-strict{
+            margin-top: 10px;
+        }
+    }
 
 
 }
@@ -375,6 +437,12 @@ a{
 .capability{
     float: left;
     width: 37%;
+    @media @desktop-strict, @tablet-strict, @phone-strict{
+        width: 88%;
+    }
+    @media @phone-strict{
+        width: 100%;
+    }
     &_wrap{
         float: left;
 
@@ -420,8 +488,10 @@ a{
 }
 
 .social{
-    float: left;
-    margin-left: 7%;
+    float: right;
+    @media @phone-strict{
+        float: left;
+    }
     &__list{
         list-style-type: none;
         padding-left: 0;
@@ -430,8 +500,10 @@ a{
     &__item{
         margin-bottom: 10px;
         @media @desktop-strict, @tablet-strict{
+            margin-right: 5px;
+        }
+        @media @phone-strict{
             float: left;
-            margin: 10px;
         }
     }
     &__icon{

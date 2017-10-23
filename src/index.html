@@ -73,12 +73,12 @@
             <h2 class="description-product__text">Состав: 100% хлопок, динамическая типизация, польская нотация. Производство: Россия.</h2>
             <span class="description-product__price">1500₽</span>
             <div class="props-product">
-                <span class="props-product__title">Размер:</span>
+                <span class="props-product__title clearfix">Размер:</span>
                 <ul class="props-product__list clearfix">
                     <li id="size1" class="props-product__item" onClick="changeSize(id)">
                         <a class="props-product__link">S</a>
                     </li>
-                    <li id="size2" class="props-product__item" onClick="changeSize(id)">
+                    <li id="size2" class="props-product__item props-product__item_active" onClick="changeSize(id)">
                         <a class="props-product__link">M</a>
                     </li>
                     <li id="size3" class="props-product__item" onClick="changeSize(id)">
@@ -87,9 +87,9 @@
                 </ul>
             </div>
             <div class="props-product">
-                <span class="props-product__title">Цвет:</span>
+                <span class="props-product__title clearfix">Цвет:</span>
                 <ul class="props-product__list clearfix">
-                    <li id="col1" class="props-product__item props-product__item_color-first">
+                    <li id="col1" class="props-product__item props-product__item_color-first props-product__item_active">
                     </li>
                     <li id="col2" class="props-product__item props-product__item_color-second">
                     </li>
@@ -97,7 +97,9 @@
                     </li>
                 </ul>
             </div>
-            <button class="description-product__button">Купить</button>
+            <div class="description-product__wrap-button">
+                <button class="description-product__button">Купить</button>
+            </div>
             <div class="favourite">
                 <img class="favourite__icon" src="img/heart.png">
                 <a class="favourite__title">Отложить на потом</a>
