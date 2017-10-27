@@ -1,5 +1,7 @@
 /* # Setup devices width */
 /* # Variables for mobile first approach and strict ranges */
+/* stylelint-disable */
+/* stylelint-enable */
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -397,7 +399,7 @@ body {
 a {
   text-decoration: none;
 }
-.clearfix:after {
+.clearfix::after {
   content: '';
   display: block;
   clear: both;
@@ -406,7 +408,7 @@ a {
   height: 87px;
   overflow: hidden;
   position: relative;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, Arial, sans-serif;
 }
 @media only screen and (min-width: 320px) and (max-width: 767px) {
   .header {
@@ -430,7 +432,7 @@ a {
 }
 .phone__number {
   font-size: 1.5em;
-  color: #cc0000;
+  color: #c00;
   font-weight: bold;
 }
 .logo-oggetto {
@@ -487,15 +489,15 @@ a {
   list-style-type: none;
   float: left;
   margin-right: 20px;
-  font: 1em 'Roboto', sans-serif;
+  font: 1em Roboto, sans-serif;
 }
 .navigation__item_style {
-  color: #cc0000;
+  color: #c00;
   text-decoration: underline;
 }
 .navigation__link {
   cursor: pointer;
-  color: #cc0000;
+  color: #c00;
 }
 .navigation__link_style {
   color: #000;
@@ -544,7 +546,7 @@ a {
 }
 .breadcrumbs__link {
   cursor: pointer;
-  color: #cc0000;
+  color: #c00;
   text-decoration: underline;
 }
 .breadcrumbs__link_active {
@@ -570,7 +572,7 @@ a {
   width: 40%;
   padding-left: 4.6%;
   overflow: hidden;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, Arial, sans-serif;
 }
 @media only screen and (min-width: 768px) and (max-width: 991px), only screen and (min-width: 320px) and (max-width: 767px) {
   .description-product {
@@ -600,7 +602,7 @@ a {
 }
 .description-product__price {
   font-size: 2.250em;
-  color: #cc0000;
+  color: #c00;
   margin: 24px 0;
   font-weight: bold;
   display: inline-block;
@@ -617,7 +619,7 @@ a {
   }
 }
 .description-product__button {
-  background-color: #cc0000;
+  background-color: #c00;
   font-size: 2em;
   padding: 20px 50px;
   border: none;
@@ -674,7 +676,7 @@ a {
   background-color: #a5af96;
 }
 .props-product__item_active {
-  border: 3px solid #cc0000;
+  border: 3px solid #c00;
 }
 .props-product__link {
   font-size: 2.250em;
@@ -703,7 +705,7 @@ a {
   border-top: 1px solid #d9d9d4;
   padding: 58px 0 0 6.25%;
   overflow: hidden;
-  font-family: 'Roboto', sans-serif;
+  font-family: Roboto, Arial, sans-serif;
 }
 .footer_wrap {
   padding: 3.7% 6%;
@@ -756,10 +758,10 @@ a {
   margin: 0;
 }
 .footer__copy {
-  margin: 30px 0 5px 0;
+  margin: 30px 0 5px;
 }
 .footer__law {
-  margin: 0 0 45px 0;
+  margin: 0 0 45px;
 }
 .footer__bottom {
   margin-top: 80px;

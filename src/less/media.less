@@ -14,6 +14,7 @@
 @md-max: (@lg-min - 1); // middle
 
 /* # Variables for mobile first approach and strict ranges */
+/* stylelint-disable */
 @phone: ~"only screen and (min-width: @{xs-min})";
 @phone-strict: ~"only screen and (min-width: @{xs-min}) and (max-width: @{xs-max})";
 
@@ -24,3 +25,4 @@
 @desktop-strict: ~"only screen and (min-width: @{md-min}) and (max-width: @{md-max})";
 
 @large: ~"only screen and (min-width: @{lg-min})";
+/* stylelint-enable */
