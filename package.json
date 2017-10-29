@@ -19,18 +19,32 @@
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
     "gulp-autoprefixer": "^4.0.0",
+    "gulp-concat": "^2.6.1",
     "gulp-ejs": "^3.0.1",
     "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "husky": "^0.14.3",
     "stylelint": "^7.13.0"
   },
   "dependencies": {
+    "amd-optimize": "^0.6.1",
     "ejs": "^2.5.7",
+    "google-closure-compiler": "^20171023.0.1",
     "gulp": "^3.9.1",
+    "gulp-amd-optimizer": "^0.6.0",
+    "gulp-angular-components": "0.0.7",
+    "gulp-angular-embed-templates": "^2.3.0",
+    "gulp-group-concat": "^1.1.6",
+    "gulp-imagemin": "^3.4.0",
+    "gulp-include": "^2.3.1",
     "gulp-less": "^3.3.0",
+    "gulp-reference": "^1.1.2",
+    "gulp-sourcemaps": "^2.6.1",
+    "imagemin-pngquant": "^5.0.1",
     "install": "^0.10.1",
     "jquery": "^3.2.1",
-    "normalize.css": "^7.0.0"
+    "normalize.css": "^7.0.0",
+    "uglify-js": "^3.1.6"
   }
 }
