@@ -10,13 +10,11 @@
 @green-gray: #a5af96;
 @dark-gray: #999;
 
-// Код для примера
 body {
     margin: 0;
 }
 
 a {
-    //color: @black;
     text-decoration: none;
 }
 
@@ -24,39 +22,6 @@ a {
     font-family: Roboto, Arial, sans-serif;
 }
 
-//
-//.menu {
-//    margin: 0;
-//    padding: 0;
-//    text-align: center;
-//    background: red; // red on small devices
-//
-//    @media @tablet {
-//        background: green; // green on medium devices
-//    }
-//
-//    @media @desktop {
-//        background: blue; // blue on large devices
-//    }
-//
-//    &__item {
-//        display: inline-block;
-//        list-style-type: none;
-//    }
-//
-//    &__link {
-//        color: #FFF;
-//    }
-//
-//    // Bottom Menu
-//    &_bottom { // BEM modifier example
-//        background: green;
-//    }
-//
-//    &_bottom &__link {
-//        color: #f00;
-//    }
-//}
 .clearfix::after {
     content: '';
     display: block;
@@ -64,7 +29,7 @@ a {
 }
 
 .header {
-    height: 87px;
+    min-height: 87px;
     overflow: hidden;
     position: relative;
     .font-family();
@@ -94,7 +59,6 @@ a {
 }
 
 .logo-oggetto {
-    display: inline-block;
     position: absolute;
     transform: translate(-50%, -50%);
     left: 50.4%;
@@ -105,11 +69,9 @@ a {
         top: 51%;
     }
 
-    &__link {
-        &_oggetto {
-            width: 50px;
-            height: 48px;
-        }
+    &__img {
+        width: 50px;
+        height: 48px;
     }
 }
 
@@ -134,7 +96,6 @@ a {
 
 .menu {
     min-height: 49px;
-    overflow: hidden;
     background-color: @white-gray;
     border-top: 1px solid @gray;
     border-bottom: 1px solid @gray;
@@ -152,10 +113,18 @@ a {
     &__item {
         list-style-type: none;
         float: left;
-        margin-right: 20px;
         font: 1em Roboto, sans-serif;
 
-        &_style:not(:first-child) {
+        @media @phone-strict{
+            margin-right: 9px !important;
+        }
+
+
+        &:not(:last-child){
+            margin-right: 20px;
+        }
+
+        &:not(:first-child) {
             color: @red;
             text-decoration: underline;
         }
@@ -173,8 +142,6 @@ a {
 }
 
 .search {
-    display: inline-block;
-    overflow: hidden;
     top: 5px;
     float: right;
     right: 5.25%;
@@ -183,7 +150,7 @@ a {
     width: 17.3%;
     @media @phone-strict {
         width: 70%;
-        top: 0;
+        top: 17px;
         float: left;
         left: 6.4%;
         right: 0;
@@ -195,19 +162,12 @@ a {
         border: 1px solid @gray;
     }
 
-    &__btn {
-        cursor: pointer;
-    }
-
     &__icon {
         position: absolute;
         right: 11px;
         top: 12px;
+        cursor: pointer;
     }
-}
-
-.content {
-    //background-color: #fff;
 }
 
 .breadcrumbs {
@@ -219,7 +179,6 @@ a {
     }
 
     &__item {
-        display: inline-block;
         float: left;
         margin-right: 10px;
 
@@ -252,7 +211,7 @@ a {
     }
 }
 
-.description-product {
+.product-description {
     float: left;
     width: 40%;
     padding-left: 4.6%;
@@ -293,12 +252,6 @@ a {
         }
     }
 
-    //&__wrap-button {
-    //    @media @tablet-strict, @phone-strict {
-    //        position: relative;
-    //    }
-    //}
-
     &__button {
         background-color: @red;
         font-size: 2em;
@@ -319,7 +272,7 @@ a {
     }
 }
 
-.props-product {
+.product-props {
     margin-bottom: 35px;
     position: relative;
     @media @tablet-strict, @phone-strict {
@@ -350,15 +303,15 @@ a {
     &__item {
         display: none;
 
-        &_color-first {
+        &_color1 {
             background-color: @white;
         }
 
-        &_color-second {
+        &_color2 {
             background-color: @yellow;
         }
 
-        &_color-third {
+        &_color3 {
             background-color: @green-gray;
         }
 
@@ -406,17 +359,39 @@ a {
         }
     }
 
-    &__service {
-        float: left;
-        margin-right: 3.5%;
-        width: 27%;
+    &__line {
+        margin: 0;
+    }
+
+    &__copy {
+        margin: 30px 0 5px;
+    }
+
+    &__law {
+        margin: 0 0 45px;
+    }
+
+    &__bottom {
+        margin-top: 80px;
         @media @desktop-strict, @tablet-strict {
-            width: 43.5%;
+            margin-top: 0;
         }
         @media @phone-strict {
-            width: 100%;
-            margin: 0 0 10px;
+            margin-top: 10px;
         }
+    }
+}
+
+.footer-links {
+    float: left;
+    margin-right: 3.5%;
+    width: 27%;
+    @media @desktop-strict, @tablet-strict {
+        width: 43.5%;
+    }
+    @media @phone-strict {
+        width: 100%;
+        margin: 0 0 10px;
     }
 
     &__title {
@@ -441,31 +416,9 @@ a {
     &__link {
         color: @black;
     }
-
-    &__hor {
-        margin: 0;
-    }
-
-    &__copy {
-        margin: 30px 0 5px;
-    }
-
-    &__law {
-        margin: 0 0 45px;
-    }
-
-    &__bottom {
-        margin-top: 80px;
-        @media @desktop-strict, @tablet-strict {
-            margin-top: 0;
-        }
-        @media @phone-strict {
-            margin-top: 10px;
-        }
-    }
 }
 
-.capability {
+.capabilities {
     float: left;
     width: 37%;
     @media @desktop-strict, @tablet-strict, @phone-strict {
@@ -475,7 +428,7 @@ a {
         width: 100%;
     }
 
-    &_wrap {
+    &__wrap {
         float: left;
     }
 
@@ -516,12 +469,6 @@ a {
             top: 8px;
             left: -5px;
         }
-    }
-
-    &__text {
-        //position: relative;
-        //top: -14px;
-        //left: 10px;
     }
 }
 

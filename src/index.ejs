@@ -19,7 +19,7 @@
     </div>
     <div class="logo-oggetto">
         <a class="logo-oggetto__link">
-            <img class="logo-oggetto__link_oggetto" src="img/oggetto_logo.png">
+            <img class="logo-oggetto__img" src="img/oggetto_logo.png">
         </a>
     </div>
     <div class="phone">
@@ -31,7 +31,7 @@
         <ul class="navigation__list">
             <% const navigation = ['LISP', 'OCaml', 'JavaScript', 'Python', 'PHP']; %>
             <% navigation.forEach(function (element, index) { %>
-            <li class="navigation__item navigation__item_style">
+            <li class="navigation__item">
                 <% if(index === 0){ %>
                 <a href="#" class="navigation__link navigation__link_style"><%= element; %></a>
                 <% } else { %>
@@ -43,7 +43,7 @@
     </div>
     <form id="search" action="#" method="get" class="search">
         <input class="search__area" type="search" title="search">
-        <button class="search__btn" type="submit"><img class="search__icon" src="img/search.png"></button>
+        <img class="search__icon" src="img/search.png">
     </form>
 </div>
 <div class="content clearfix">
@@ -54,52 +54,57 @@
             <li class="breadcrumbs__item">
                 <a href="#" class="breadcrumbs__link"><%= element %></a>
                 <% if(index < (breadcrumbs.length - 1)){ %>
-                <span>/</span>
+                <span class="breadcrumbs__separator">/</span>
                 <% } %>
             </li>
             <% }); %>
         </ul>
     </div>
     <div class="photo_wrap">
-        <img id="main-photo" class="photo__img" src="img/tshirt_white.jpg">
+        <img id="mainPhoto" class="photo__img" src="img/tshirt_white.jpg">
     </div>
-    <div class="description-product">
-        <h1 class="description-product__title">Футболка Alien technology</h1>
-        <h2 class="description-product__text">Состав: 100% хлопок, динамическая типизация, польская нотация.
+    <div class="product-description">
+        <h1 class="product-description__title">Футболка Alien technology</h1>
+        <h2 class="product-description__text">Состав: 100% хлопок, динамическая типизация, польская нотация.
             Производство: Россия.</h2>
-        <form action="#" method="post" class="props-product">
-            <span class="description-product__price">1500₽</span>
-            <p class="props-product__title clearfix">Размер:</p>
-            <div class="props-product__list clearfix">
+        <form action="#" method="post" class="product-props">
+            <span class="product-description__price">1500₽</span>
+            <p class="product-props__title clearfix">Размер:</p>
+            <div class="product-props__list clearfix">
                 <% const size = [
-                    {id: 'size-s', value: 's', attr: 'checked', text: 'S'},
-                    {id: 'size-m', value: 'm', attr: 'checked', text: 'M'},
-                    {id: 'size-l', value: 'l', attr: 'checked', text: 'L'}]; %>
+                    {id: 'sizeS', value: 's', attr: 'checked', text: 'S'},
+                    {id: 'sizeM', value: 'm', attr: 'checked', text: 'M'},
+                    {id: 'sizeL', value: 'l', attr: 'checked', text: 'L'}]; %>
                 <% size.forEach(function (element, index) { %>
-                <input type="radio" id="<%= element.id; %>" name="size" class="props-product__item"
+                <input type="radio" id="<%= element.id; %>" name="size" class="product-props__item"
                        value="<%= element.value; %>"
-                        <%if(index === 1) {%>
-                            <%= element.attr; %>
-                        <% } %>>
-                <label class="props-product__link props-product__size" for="<%= element.id; %>"><%= element.text; %></label>
+                        <% if(index === 1) { %>
+                        <%= element.attr; %>
+                        <% } %>
+                >
+                <label class="product-props__link product-props__size"
+                       for="<%= element.id; %>"><%= element.text; %></label>
 
                 <% }); %>
             </div>
-            <p class="props-product__title clearfix">Цвет:</p>
-            <div class="props-product__list clearfix">
+            <p class="product-props__title clearfix">Цвет:</p>
+            <div class="product-props__list clearfix">
                 <% const color = [
-                    {id: 'col-1', attr: 'checked', number: 'first', data: 'white'},
-                    {id: 'col-2', attr: 'checked', number: 'second', data: 'yellow'},
-                    {id: 'col-3', attr: 'checked', number: 'third', data: 'green'}]; %>
+                    {col: 'col1', attr: 'checked', data: 'white'},
+                    {col: 'col2', attr: 'checked', data: 'yellow'},
+                    {col: 'col3', attr: 'checked', data: 'green'}]; %>
                 <% color.forEach(function (element, index) { %>
-                <input type="radio" id="<%= element.id; %>" name="color" class="props-product__item"
-                        <%if(index === 0) {%><%= element.attr; %> <% } %>>
-                <label class="props-product__link props-product__size props-product__item_color-<%= element.number; %>"
+                <input type="radio" id="<%= element.col; %>" name="color" class="product-props__item"
+                        <% if(index === 0) { %>
+                        <%= element.attr; %>
+                        <% } %>
+                >
+                <label class="product-props__link product-props__size product-props__item_color<%= index + 1; %>"
                        data-color="<%= element.data; %>"
-                       for="<%= element.id; %>"></label>
+                       for="<%= element.col; %>"></label>
                 <% }); %>
             </div>
-            <button class="description-product__button" type="submit">Купить</button>
+            <button class="product-description__button" type="submit">Купить</button>
         </form>
         <div class="favourite">
             <img class="favourite__icon" src="img/heart.png">
@@ -109,49 +114,49 @@
 </div>
 <footer class="footer footer_wrap">
     <div class="footer__top clearfix">
-        <div class="footer__service clearfix">
-            <p class="footer__title">Сервис и поддержка</p>
-            <ul class="footer__list">
+        <div class="footer-links clearfix">
+            <p class="footer-links__title">Сервис и поддержка</p>
+            <ul class="footer-links__list">
                 <% const service = ['Как сделать заказ', 'Возврат товара', 'Публичная оферта', 'Доставка', 'Способы оплаты',
                     'Правила продажи', 'Возврат денежных средств', 'Вопросы и ответы']; %>
                 <% service.forEach(function (element, index) { %>
-                <li class="footer__item">
-                    <a href="#" class="footer__link"><%= element; %></a>
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link"><%= element; %></a>
                 </li>
                 <% }); %>
             </ul>
         </div>
-        <div class="footer__service clearfix">
-            <p class="footer__title">О компании</p>
-            <ul class="footer__list">
+        <div class="footer-links clearfix">
+            <p class="footer-links__title">О компании</p>
+            <ul class="footer-links__list">
                 <% const company = ['О нас', 'Контакты', 'Вакансии', 'Партнерами', 'Сертификаты', 'Преимущества',
                     'Наши скидки']; %>
                 <% company.forEach(function (element, index) { %>
-                <li class="footer__item">
-                    <a href="#" class="footer__link"><%= element; %></a>
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link"><%= element; %></a>
                 </li>
                 <% }); %>
             </ul>
         </div>
-        <div class="capability">
-            <div class="capability_wrap">
-                <ul class="capability__list">
-                    <% const capability = [
+        <div class="capabilities">
+            <div class="capabilities__wrap">
+                <ul class="capabilities__list">
+                    <% const capabilities = [
                         {
-                            imgClass: 'capability__icon_delivery',
+                            imgClass: 'capabilities__icon_delivery',
                             src: 'delivery.svg',
                             text: 'бесплатная доставка от 4000₽'
                         },
                         {
-                            imgClass: 'capability__icon_heart',
+                            imgClass: 'capabilities__icon_heart',
                             src: 'heart.svg',
                             text: 'пробники в подарок при каждой покупке'
                         },
-                        {imgClass: 'capability__icon_cup', src: 'cup.svg', text: 'акции и подарки за покупку'}]; %>
-                    <% capability.forEach(function (element, index) { %>
-                    <li class="capability__item">
-                        <img class="capability__icon <%= element.imgClass %>" src="img/<%= element.src %>">
-                        <span class="capability__text"><%= element.text; %></span>
+                        {imgClass: 'capabilities__icon_cup', src: 'cup.svg', text: 'акции и подарки за покупку'}]; %>
+                    <% capabilities.forEach(function (element, index) { %>
+                    <li class="capabilities__item">
+                        <img class="capabilities__icon <%= element.imgClass %>" src="img/<%= element.src %>">
+                        <span class="capabilities__text"><%= element.text; %></span>
                     </li>
                     <% }); %>
                 </ul>
@@ -171,7 +176,7 @@
         </div>
     </div>
     <div class="footer__bottom">
-        <hr class="footer__hor">
+        <hr class="footer__line">
         <p class="footer__copy">2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.</p>
         <p class="footer__law">Все права защищены. Доставка по всей России!</p>
     </div>
