@@ -14,12 +14,12 @@
 <header class="header">
     <div class="logo-shop">
         <a class="logo-shop__link">
-            <img class="logo-shop__link_the-shop" src="img/the_shop_logo.svg">
+            <img class="logo-shop__link_the-shop" src="img/the_shop_logo.svg" alt="shop">
         </a>
     </div>
     <div class="logo-oggetto">
         <a class="logo-oggetto__link">
-            <img class="logo-oggetto__img" src="img/oggetto_logo.png">
+            <img class="logo-oggetto__img" src="img/oggetto_logo.png" alt="oggetto">
         </a>
     </div>
     <div class="phone">
@@ -43,7 +43,7 @@
     </div>
     <form id="search" action="#" method="get" class="search">
         <input class="search__area" type="search" title="search">
-        <img class="search__icon" src="img/search.png">
+        <img class="search__icon" src="img/search.png" alt="search">
     </form>
 </div>
 <div class="content clearfix">
@@ -61,7 +61,7 @@
         </ul>
     </div>
     <div class="photo_wrap">
-        <img id="mainPhoto" class="photo__img" src="img/tshirt_white.jpg">
+        <img id="mainPhoto" class="photo__img" src="img/tshirt_white.jpg" alt="tshirt">
     </div>
     <div class="product-description">
         <h1 class="product-description__title">Футболка Alien technology</h1>
@@ -107,7 +107,7 @@
             <button class="product-description__button" type="submit">Купить</button>
         </form>
         <div class="favourite">
-            <img class="favourite__icon" src="img/heart.png">
+            <img class="favourite__icon" src="img/heart.png" alt="favourite">
             <a class="favourite__title">Отложить на потом</a>
         </div>
     </div>
@@ -155,7 +155,7 @@
                         {imgClass: 'capabilities__icon_cup', src: 'cup.svg', text: 'акции и подарки за покупку'}]; %>
                     <% capabilities.forEach(function (element, index) { %>
                     <li class="capabilities__item">
-                        <img class="capabilities__icon <%= element.imgClass %>" src="img/<%= element.src %>">
+                        <img class="capabilities__icon <%= element.imgClass %>" src="img/<%= element.src %>" alt="icon">
                         <span class="capabilities__text"><%= element.text; %></span>
                     </li>
                     <% }); %>
@@ -163,11 +163,11 @@
             </div>
             <div class="social">
                 <ul class="social__list">
-                    <% const social = ['facebook.svg', 'twitter.svg', 'instagram.svg']; %>
+                    <% const social = ['facebook', 'twitter', 'instagram']; %>
                     <% social.forEach(function (element, index) { %>
                     <li class="social__item">
                         <a href="#" class="social__link">
-                            <img class="social__icon" src="img/<%= element; %>">
+                            <img class="social__icon" src="img/<%= element; %>.svg" alt="<%= element; %>">
                         </a>
                     </li>
                     <% }); %>
