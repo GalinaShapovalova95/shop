@@ -29,26 +29,28 @@ a {
 }
 
 .header {
-    min-height: 87px;
+    min-height: 140px;
     overflow: hidden;
     position: relative;
     .font-family();
-    @media @phone-strict {
-        height: 140px;
+    @media @tablet {
+        min-height: 87px;
     }
 }
 
 .phone {
-    display: inline-block;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 86%;
+    right: 0;
+    text-align: center;
     position: absolute;
-    top: 32px;
-    right: 5.25%;
-    @media @phone-strict {
-        transform: translate(-50%, -50%);
-        left: 50%;
-        top: 86%;
-        right: 0;
-        text-align: center;
+
+    @media @tablet {
+        position: relative;
+        float: right;
+        top: 45px;
+        left: 1.2%;
     }
 
     &__number {
@@ -61,12 +63,13 @@ a {
 .logo-oggetto {
     position: absolute;
     transform: translate(-50%, -50%);
-    left: 50.4%;
-    top: 50%;
+    left: 50%;
+    top: 51%;
     cursor: pointer;
-    @media @phone-strict {
-        left: 50%;
-        top: 51%;
+
+    @media @tablet {
+        left: 50.4%;
+        top: 50%;
     }
 
     &__img {
@@ -78,13 +81,14 @@ a {
 .logo-shop {
     display: inline-block;
     position: absolute;
-    left: 6.45%;
-    top: 35px;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 17%;
     cursor: pointer;
-    @media @phone-strict {
-        transform: translate(-50%, -50%);
-        left: 50%;
-        top: 17%;
+
+    @media @tablet {
+        left: 9.85%;
+        top: 48px;
     }
 
     &__link {
@@ -115,13 +119,12 @@ a {
         float: left;
         font: 1em Roboto, sans-serif;
 
-        @media @phone-strict{
-            margin-right: 9px !important;
+        @media @tablet {
+            margin-right: 20px !important;
         }
 
-
-        &:not(:last-child){
-            margin-right: 20px;
+        &:not(:last-child) {
+            margin-right: 9px;
         }
 
         &:not(:first-child) {
@@ -142,18 +145,20 @@ a {
 }
 
 .search {
-    top: 5px;
-    float: right;
-    right: 5.25%;
     position: relative;
     height: 38px;
-    width: 17.3%;
-    @media @phone-strict {
-        width: 70%;
-        top: 17px;
-        float: left;
-        left: 6.4%;
-        right: 0;
+    width: 70%;
+    top: 17px;
+    float: left;
+    left: 6.4%;
+    right: 0;
+
+    @media @tablet {
+        width: 17.3%;
+        top: 5px;
+        float: right;
+        left: -5.3%;
+        right: 5.25%;
     }
 
     &__area {
@@ -198,11 +203,12 @@ a {
 .photo {
     &_wrap {
         float: left;
-        width: 43.7%;
-        padding-left: 6.4%;
-        @media @tablet-strict, @phone-strict {
-            width: 80%;
-            padding: 0 10%;
+        width: 80%;
+        padding: 0 10%;
+
+        @media @desktop {
+            width: 43.7%;
+            padding: 0 0 0 6.4%;
         }
     }
 
@@ -213,13 +219,14 @@ a {
 
 .product-description {
     float: left;
-    width: 40%;
-    padding-left: 4.6%;
+    width: 80%;
+    padding: 0 10%;
     overflow: hidden;
     .font-family();
-    @media @tablet-strict, @phone-strict {
-        width: 80%;
-        padding: 0 10%;
+
+    @media @desktop {
+        width: 40%;
+        padding: 0 0 0 4.6%;
     }
 
     &__title {
@@ -227,65 +234,51 @@ a {
         font-size: 2.250em;
         top: -8px;
         position: relative;
-        @media @tablet-strict, @phone-strict {
-            text-align: center;
+        text-align: center;
+
+        @media @desktop {
+            text-align: inherit;
         }
     }
 
     &__text {
         margin: 0;
         font-size: 1em;
-        @media @tablet-strict, @phone-strict {
-            text-align: center;
-        }
-    }
+        text-align: center;
 
-    &__price {
-        font-size: 2.250em;
-        color: @red;
-        margin: 24px 0;
-        font-weight: bold;
-        display: block;
-        @media @tablet-strict, @phone-strict {
-            text-align: center;
-            display: block;
+        @media @desktop {
+            text-align: inherit;
         }
-    }
-
-    &__button {
-        background-color: @red;
-        font-size: 2em;
-        padding: 20px 50px;
-        border: none;
-        color: @white;
-        cursor: pointer;
-        @media @tablet-strict, @phone-strict {
-            position: absolute;
-            transform: translate(-50%, -50%);
-            left: 50%;
-            bottom: -100px;
-        }
-    }
-
-    &__button:focus {
-        outline: none;
     }
 }
 
 .product-props {
     margin-bottom: 35px;
     position: relative;
-    @media @tablet-strict, @phone-strict {
-        text-align: center;
+    text-align: center;
+
+    @media @desktop {
+        text-align: inherit;
+    }
+
+    &__title {
+        margin: 0;
+
+        @media @desktop {
+            margin: 32px 0 13px;
+        }
     }
 
     &__list {
         list-style-type: none;
         padding-left: 0;
         margin: 17px 0 39px;
-        @media @tablet-strict, @phone-strict {
-            display: inline-block;
-            text-align: center;
+        display: inline-block;
+        text-align: center;
+
+        @media @desktop {
+            text-align: inherit;
+            margin: 0;
         }
     }
 
@@ -326,14 +319,52 @@ a {
         text-align: center;
         line-height: 58px;
     }
+
+    &__price {
+        font-size: 2.250em;
+        color: @red;
+        margin: 24px 0;
+        font-weight: bold;
+        display: block;
+        text-align: center;
+
+        @media @desktop {
+            text-align: inherit;
+        }
+    }
+
+    &__button {
+        background-color: @red;
+        font-size: 2em;
+        padding: 20px 50px;
+        border: none;
+        color: @white;
+        cursor: pointer;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        left: 50%;
+        bottom: -100px;
+
+        @media @desktop {
+            position: inherit;
+            margin-top: 36px;
+            transform: none;
+        }
+    }
+
+    &__button:focus {
+        outline: none;
+    }
 }
 
 .favourite {
-    margin-top: 40px;
+    margin-top: 100px;
+    text-align: center;
     cursor: pointer;
-    @media @tablet-strict, @phone-strict {
-        margin-top: 100px;
-        text-align: center;
+
+    @media @desktop {
+        margin-top: 40px;
+        text-align: inherit;
     }
 
     &__title {
@@ -351,16 +382,21 @@ a {
     .font-family();
 
     &_wrap {
-        padding: 3.7% 6%;
-        margin-top: 123px;
-        @media @phone-strict {
-            padding: 2%;
-            margin-top: 30px;
+        padding: 2%;
+        margin-top: 30px;
+
+        @media @tablet {
+            padding: 3.7% 6% 1.6%;
+            margin-top: 123px;
         }
     }
 
     &__line {
         margin: 0;
+
+        @media @tablet {
+            margin: 32px 0 0;
+        }
     }
 
     &__copy {
@@ -372,26 +408,26 @@ a {
     }
 
     &__bottom {
-        margin-top: 80px;
-        @media @desktop-strict, @tablet-strict {
+        margin-top: 10px;
+
+        @media @tablet {
             margin-top: 0;
-        }
-        @media @phone-strict {
-            margin-top: 10px;
+            margin-bottom: 77px;
         }
     }
 }
 
 .footer-links {
     float: left;
-    margin-right: 3.5%;
-    width: 27%;
-    @media @desktop-strict, @tablet-strict {
+    width: 100%;
+    margin: 0 0 10px;
+
+    @media @tablet {
         width: 43.5%;
     }
-    @media @phone-strict {
-        width: 100%;
-        margin: 0 0 10px;
+    @media @large {
+        margin-right: 3.5%;
+        width: 27%;
     }
 
     &__title {
@@ -404,7 +440,7 @@ a {
         padding-left: 0;
         margin: 0;
         column-count: 2;
-        @media @desktop-strict {
+        @media @desktop {
             height: auto;
         }
     }
@@ -420,12 +456,13 @@ a {
 
 .capabilities {
     float: left;
-    width: 37%;
-    @media @desktop-strict, @tablet-strict, @phone-strict {
+    width: 100%;
+
+    @media @tablet {
         width: 88%;
     }
-    @media @phone-strict {
-        width: 100%;
+    @media @large {
+        width: 37%;
     }
 
     &__wrap {
@@ -473,9 +510,10 @@ a {
 }
 
 .social {
-    float: right;
-    @media @phone-strict {
-        float: left;
+    float: left;
+
+    @media @tablet {
+        float: right;
     }
 
     &__list {
@@ -485,12 +523,12 @@ a {
     }
 
     &__item {
+        float: left;
         margin-bottom: 10px;
-        @media @desktop-strict, @tablet-strict {
+
+        @media @tablet {
+            float: none;
             margin-right: 5px;
-        }
-        @media @phone-strict {
-            float: left;
         }
     }
 

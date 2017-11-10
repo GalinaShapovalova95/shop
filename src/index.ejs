@@ -5,6 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7h3 5h0p</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <link rel="stylesheet" href="css/main.css">
@@ -68,7 +69,7 @@
         <h2 class="product-description__text">Состав: 100% хлопок, динамическая типизация, польская нотация.
             Производство: Россия.</h2>
         <form action="#" method="post" class="product-props">
-            <span class="product-description__price">1500₽</span>
+            <span class="product-props__price">1500₽</span>
             <p class="product-props__title clearfix">Размер:</p>
             <div class="product-props__list clearfix">
                 <% const size = [
@@ -104,7 +105,9 @@
                        for="<%= element.col; %>"></label>
                 <% }); %>
             </div>
-            <button class="product-description__button" type="submit">Купить</button>
+            <div class="product-props__button-wrap">
+                <button class="product-props__button" type="submit">Купить</button>
+            </div>
         </form>
         <div class="favourite">
             <img class="favourite__icon" src="img/heart.png" alt="favourite">
