@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/normalize.css">
 </head>
-<body>
+<body id="doc">
 <header class="header">
     <div class="logo-shop">
         <a class="logo-shop__link">
@@ -69,9 +69,10 @@
         <h2 class="product-description__text">Состав: 100% хлопок, динамическая типизация, польская нотация.
             Производство: Россия.</h2>
         <form action="#" method="post" class="product-props">
-            <span class="product-props__price">1500₽</span>
+            <span id="priceVal" class="product-props__price">1500</span>
+            <span class="product-props__currency">₽</span>
             <p class="product-props__title clearfix">Размер:</p>
-            <div class="product-props__list clearfix">
+            <div id="sizeList" class="product-props__list clearfix">
                 <% const size = [
                     {id: 'sizeS', value: 's', attr: 'checked', text: 'S'},
                     {id: 'sizeM', value: 'm', attr: 'checked', text: 'M'},
@@ -83,13 +84,13 @@
                         <%= element.attr; %>
                         <% } %>
                 >
-                <label class="product-props__link product-props__size"
+                <label class="product-props__link product-props__size" data-type="size" data-value="<%= element.text; %>"
                        for="<%= element.id; %>"><%= element.text; %></label>
 
                 <% }); %>
             </div>
             <p class="product-props__title clearfix">Цвет:</p>
-            <div class="product-props__list clearfix">
+            <div id="colorList" class="product-props__list clearfix">
                 <% const color = [
                     {col: 'col1', attr: 'checked', data: 'white'},
                     {col: 'col2', attr: 'checked', data: 'yellow'},
@@ -101,7 +102,7 @@
                         <% } %>
                 >
                 <label class="product-props__link product-props__size product-props__item_color<%= index + 1; %>"
-                       data-color="<%= element.data; %>"
+                       data-type="color" data-value="<%= element.data; %>"
                        for="<%= element.col; %>"></label>
                 <% }); %>
             </div>
@@ -185,6 +186,6 @@
     </div>
 </footer>
 
-<script src="js/scripts.js"></script>
+<script type="module" src="js/main.js"></script>
 </body>
 </html>
