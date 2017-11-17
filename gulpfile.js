@@ -7,6 +7,8 @@ const ejs          = require('gulp-ejs');
 const gutil        = require('gulp-util');
 const sourcemaps = require('gulp-sourcemaps');
 
+//const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+
 // Автоперезагрузка при изменении файлов в папке `dist`:
 // Принцип: меняем файлы в `/src`, они обрабатываются и переносятся в `dist` и срабатывает автоперезагрузка.
 // Это таск нужен только при локальной разработке.
