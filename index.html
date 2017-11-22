@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7h3 5h0p</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/normalize.css">
+</head>
+<body id="doc">
+<header class="header">
+    <div class="logo-shop">
+        <a class="logo-shop__link">
+            <img class="logo-shop__link_the-shop" src="img/the_shop_logo.svg" alt="shop">
+        </a>
+    </div>
+    <div class="logo-oggetto">
+        <a class="logo-oggetto__link">
+            <img class="logo-oggetto__img" src="img/oggetto_logo.png" alt="oggetto">
+        </a>
+    </div>
+    <div class="phone">
+        <span class="phone__number">+7(812)2•12•85•06</span>
+    </div>
+</header>
+<div class="menu">
+    <div class="navigation">
+        <ul class="navigation__list">
+            
+            
+            <li class="navigation__item">
+                
+                <a href="#" class="navigation__link navigation__link_style">LISP</a>
+                
+            </li>
+            
+            <li class="navigation__item">
+                
+                <a href="#" class="navigation__link">OCaml</a>
+                
+            </li>
+            
+            <li class="navigation__item">
+                
+                <a href="#" class="navigation__link">JavaScript</a>
+                
+            </li>
+            
+            <li class="navigation__item">
+                
+                <a href="#" class="navigation__link">Python</a>
+                
+            </li>
+            
+            <li class="navigation__item">
+                
+                <a href="#" class="navigation__link">PHP</a>
+                
+            </li>
+            
+        </ul>
+    </div>
+    <form id="search" action="#" method="get" class="search">
+        <input class="search__area" type="search" title="search">
+        <img class="search__icon" src="img/search.png" alt="search">
+    </form>
+</div>
+<div class="content clearfix">
+    <div class="breadcrumbs clearfix">
+        <ul class="breadcrumbs__list">
+            
+            
+            <li class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link">LISP</a>
+                
+                <span class="breadcrumbs__separator">/</span>
+                
+            </li>
+            
+            <li class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link">Одежда</a>
+                
+                <span class="breadcrumbs__separator">/</span>
+                
+            </li>
+            
+            <li class="breadcrumbs__item">
+                <a href="#" class="breadcrumbs__link">Футболки</a>
+                
+            </li>
+            
+        </ul>
+    </div>
+    <div class="photo_wrap">
+        <img id="mainPhoto" class="photo__img" src="img/tshirt_white.jpg" alt="tshirt">
+    </div>
+    <div class="product-description">
+        <h1 class="product-description__title">Футболка Alien technology</h1>
+        <h2 class="product-description__text">Состав: 100% хлопок, динамическая типизация, польская нотация.
+            Производство: Россия.</h2>
+        <form action="#" method="post" class="product-props">
+            <span id="priceVal" class="product-props__price">1500</span>
+            <span class="product-props__currency">₽</span>
+            <p class="product-props__title clearfix">Размер:</p>
+            <div id="sizeList" class="product-props__list clearfix">
+                
+                
+                <input type="radio" id="sizeS" name="size" class="product-props__item"
+                       value="s"
+                        
+                >
+                <label class="product-props__link product-props__size" data-type="size" data-value="S"
+                       for="sizeS">S</label>
+
+                
+                <input type="radio" id="sizeM" name="size" class="product-props__item"
+                       value="m"
+                        
+                        checked
+                        
+                >
+                <label class="product-props__link product-props__size" data-type="size" data-value="M"
+                       for="sizeM">M</label>
+
+                
+                <input type="radio" id="sizeL" name="size" class="product-props__item"
+                       value="l"
+                        
+                >
+                <label class="product-props__link product-props__size" data-type="size" data-value="L"
+                       for="sizeL">L</label>
+
+                
+            </div>
+            <p class="product-props__title clearfix">Цвет:</p>
+            <div id="colorList" class="product-props__list clearfix">
+                
+                
+                <input type="radio" id="col1" name="color" class="product-props__item"
+                        
+                        checked
+                        
+                >
+                <label class="product-props__link product-props__size product-props__item_color1"
+                       data-type="color" data-value="white"
+                       for="col1"></label>
+                
+                <input type="radio" id="col2" name="color" class="product-props__item"
+                        
+                >
+                <label class="product-props__link product-props__size product-props__item_color2"
+                       data-type="color" data-value="yellow"
+                       for="col2"></label>
+                
+                <input type="radio" id="col3" name="color" class="product-props__item"
+                        
+                >
+                <label class="product-props__link product-props__size product-props__item_color3"
+                       data-type="color" data-value="green"
+                       for="col3"></label>
+                
+            </div>
+            <div class="product-props__button-wrap">
+                <button class="product-props__button" type="submit">Купить</button>
+            </div>
+        </form>
+        <div class="favourite">
+            <img class="favourite__icon" src="img/heart.png" alt="favourite">
+            <a class="favourite__title">Отложить на потом</a>
+        </div>
+    </div>
+</div>
+<footer class="footer footer_wrap">
+    <div class="footer__top clearfix">
+        <div class="footer-links clearfix">
+            <p class="footer-links__title">Сервис и поддержка</p>
+            <ul class="footer-links__list">
+                
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Как сделать заказ</a>
+                </li>
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Возврат товара</a>
+                </li>
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Публичная оферта</a>
+                </li>
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Доставка</a>
+                </li>
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Способы оплаты</a>
+                </li>
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Правила продажи</a>
+                </li>
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Возврат денежных средств</a>
+                </li>
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Вопросы и ответы</a>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="footer-links clearfix">
+            <p class="footer-links__title">О компании</p>
+            <ul class="footer-links__list">
+                
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">О нас</a>
+                </li>
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Контакты</a>
+                </li>
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Вакансии</a>
+                </li>
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Партнерами</a>
+                </li>
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Сертификаты</a>
+                </li>
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Преимущества</a>
+                </li>
+                
+                <li class="footer-links__item">
+                    <a href="#" class="footer-links__link">Наши скидки</a>
+                </li>
+                
+            </ul>
+        </div>
+        <div class="capabilities">
+            <div class="capabilities__wrap">
+                <ul class="capabilities__list">
+                    
+                    
+                    <li class="capabilities__item">
+                        <img class="capabilities__icon capabilities__icon_delivery" src="img/delivery.svg" alt="icon">
+                        <span class="capabilities__text">бесплатная доставка от 4000₽</span>
+                    </li>
+                    
+                    <li class="capabilities__item">
+                        <img class="capabilities__icon capabilities__icon_heart" src="img/heart.svg" alt="icon">
+                        <span class="capabilities__text">пробники в подарок при каждой покупке</span>
+                    </li>
+                    
+                    <li class="capabilities__item">
+                        <img class="capabilities__icon capabilities__icon_cup" src="img/cup.svg" alt="icon">
+                        <span class="capabilities__text">акции и подарки за покупку</span>
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="social">
+                <ul class="social__list">
+                    
+                    
+                    <li class="social__item">
+                        <a href="#" class="social__link">
+                            <img class="social__icon" src="img/facebook.svg" alt="facebook">
+                        </a>
+                    </li>
+                    
+                    <li class="social__item">
+                        <a href="#" class="social__link">
+                            <img class="social__icon" src="img/twitter.svg" alt="twitter">
+                        </a>
+                    </li>
+                    
+                    <li class="social__item">
+                        <a href="#" class="social__link">
+                            <img class="social__icon" src="img/instagram.svg" alt="instagram">
+                        </a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <hr class="footer__line">
+        <p class="footer__copy">2005-2017 © 7h35h0p.ru — модный интернет-магазин одежды, обуви и аксессуаров.</p>
+        <p class="footer__law">Все права защищены. Доставка по всей России!</p>
+    </div>
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
