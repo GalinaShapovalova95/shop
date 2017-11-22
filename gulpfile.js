@@ -6,8 +6,12 @@ const rename       = require('gulp-rename');
 const ejs          = require('gulp-ejs');
 const gutil        = require('gulp-util');
 const sourcemaps = require('gulp-sourcemaps');
+const include       = require('gulp-include');
+const imagemin      = require('gulp-imagemin');
+const gulpIf        = require('gulp-if');
 
-//const isDevelopment = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
+const env = process.env.NODE_ENV;
+const isDevelopment = !env || env === 'development';
 
 // Автоперезагрузка при изменении файлов в папке `dist`:
 // Принцип: меняем файлы в `/src`, они обрабатываются и переносятся в `dist` и срабатывает автоперезагрузка.
@@ -41,12 +45,14 @@ gulp.task('img', () => {
 
 gulp.task('js', () => {
     gulp.src('src/js/**/*.*')
+        .pipe(gulpIf(!isDevelopment, imagemin()))
         .pipe(gulp.dest('./dist/js'));
 });
 
 gulp.task('html', () => {
     gulp.src('src/index.ejs')
         .pipe(ejs().on('error', gutil.log))
+        .pipe(include())
         .pipe(rename('index.html'))
         .pipe(gulp.dest('./dist'));
 });
